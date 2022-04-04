@@ -5,11 +5,11 @@ import matplotlib.pyplot as plt
 
 fp = (r'india-polygon.shp')
 map_df = gpd.read_file(fp)
-map_df.head() #check the head of the file
+map_df.head()
 
 data_df = pd.read_excel(r'data_ecxel.xlsx')
 data_df.rename(columns={'Name of State / UT': 'st_nm'},inplace=True)
-data_df.head() #check the head of the file
+data_df.head()
 
 merged= map_df.merge(data_df, on = 'st_nm', how = 'left')
 merged.head()
